@@ -1,0 +1,11 @@
+appId: com.example.nextron
+productName: Revival
+directories:
+  output: build
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
