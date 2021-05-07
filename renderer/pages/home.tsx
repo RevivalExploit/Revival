@@ -6,29 +6,17 @@ import Editor from "@components/editor";
 const Scripts = styled.div`
 	height: 250px;
 	width: 135px;
+	border-radius: 8px;
 `;
-
-/*const Editor = styled.div`
-	height: 250px;
-	width: 535px;
-`;
-	
-*/
 
 const Mid = styled.div`
 	margin-top: 10px;
+	margin-right: 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	${Editor}, ${Scripts} {
-		background-color: ${(props) => props.theme.Foreground};
-		border-radius: 8px;
-	}
-	${Editor} {
-		margin-left: 10px;
-	}
 	${Scripts} {
-		margin-right: 10px;
+		background: ${(props) => props.theme.Foreground};
 	}
 `;
 

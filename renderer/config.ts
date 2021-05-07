@@ -17,7 +17,7 @@ const META = {
 const THEME = {
 	Background: "#171C28",
 	BackgroundOffset: "#2d374f",
-	Foreground: "#636D83",
+	Foreground: "#2e3440",
 	Highlight: "#10B1FE",
 	Keyword: "#10b1fe",
 };

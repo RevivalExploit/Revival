@@ -15,7 +15,7 @@ const Holder = styled.div`
 	text-align: left;
 	.CodeMirror {
 		height: 250px;
-		width: 535px;
+		width: 520px;
 		border-radius: 8px;
 	}
 `;
