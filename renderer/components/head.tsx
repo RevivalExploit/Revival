@@ -9,6 +9,7 @@ const Top = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background: ${THEME.BackgroundOffset};
 	* {
 		-webkit-app-region: no-drag;
 	}
@@ -25,7 +26,7 @@ const Top = styled.div`
 	.nav-buttons {
 		height: 100%;
 		* {
-			margin: 0 10px;
+			margin: 3px 10px;
 			transition: color 0.1s ease;
 			&:hover {
 				cursor: pointer;
