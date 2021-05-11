@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { AiOutlineLeft } from "react-icons/ai";
-// import Editor from '@components/editor'
 
 const Settings = styled.div`
 	display: flex;
@@ -9,7 +8,7 @@ const Settings = styled.div`
 `;
 const Back = styled.a`
 	margin-left: 10px;
-	margin-top:10px;
+	margin-top: 10px;
 	svg {
 		transition: transform 0.2s ease;
 		&:hover {
