@@ -1,7 +1,6 @@
 import { spawn, ChildProcessWithoutNullStreams } from "child_process";
 import { EventEmitter } from "events";
 
-
 interface Data {
 	script?: string;
 }
@@ -46,4 +45,4 @@ namespace Communication {
 	}
 }
 
-export default Communication
+export default Communication;

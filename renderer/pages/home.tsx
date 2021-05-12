@@ -63,7 +63,7 @@ export default function home(): JSX.Element {
 
 	let Inject = () => {
 		ipcRenderer.send("inject");
-	}
+	};
 
 	return (
 		<>
@@ -102,11 +102,7 @@ export default function home(): JSX.Element {
 				>
 					Save Script
 				</Card>
-				<Card
-					onClick={Inject}
-				>
-					Inject
-				</Card>
+				<Card onClick={Inject}>Inject</Card>
 				<Card href="/settings">Settings</Card>
 				<Card
 					onClick={() => {
