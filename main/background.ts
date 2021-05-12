@@ -49,6 +49,9 @@ if (isProd) {
 	ipcMain.on("execute", (e, script) => {
 		Api.send(Driver.Types.Execute, {script: script})
 	})
+	ipcMain.on("inject", () => {
+		Api.send(Driver.Types.Inject)
+	})
 })();
 
 app.on("window-all-closed", () => {

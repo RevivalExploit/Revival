@@ -1,6 +1,7 @@
 import { THEME } from "config";
 import styled from "styled-components";
 import { Card } from "@styles/card.theme";
+import { ipcRenderer } from "electron";
 
 let CodeMirror = null;
 if (typeof window !== "undefined" && typeof window.navigator !== "undefined") {
@@ -57,7 +58,12 @@ export default function home(): JSX.Element {
 
 	let Execute = () => {
 		alert(Editor.getValue());
+		ipcRenderer.send("execute", Editor.getValue());
 	};
+
+	let Inject = () => {
+		ipcRenderer.send("inject");
+	}
 
 	return (
 		<>
@@ -97,9 +103,7 @@ export default function home(): JSX.Element {
 					Save Script
 				</Card>
 				<Card
-					onClick={() => {
-						alert("Inject Yay");
-					}}
+					onClick={Inject}
 				>
 					Inject
 				</Card>
