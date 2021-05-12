@@ -85,7 +85,6 @@ export default function home(): JSX.Element {
 	};
 
 	let [SettingsOpen, setSettingsOpen] = useState(false);
-	let SettingsButton = () => {};
 
 	return (
 		<>
