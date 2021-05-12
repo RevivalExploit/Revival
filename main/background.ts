@@ -34,10 +34,10 @@ if (isProd) {
 	const Api = new Driver();
 
 	if (isProd) {
-		await mainWindow.loadURL("app://./home.html");
+		await mainWindow.loadURL("app://./index.html");
 	} else {
 		const port = process.argv[2];
-		await mainWindow.loadURL(`http://localhost:${port}/home`);
+		await mainWindow.loadURL(`http://localhost:${port}/`);
 	}
 
 	ipcMain.on("exit", () => {
