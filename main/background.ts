@@ -4,7 +4,7 @@ import { createWindow } from "./helpers";
 
 import { THEME } from "../renderer/config";
 
-import Driver from "../main/helpers/api";
+import Driver from "./lib/api";
 
 const isProd: boolean = process.env.NODE_ENV === "production";
 
@@ -31,6 +31,8 @@ if (isProd) {
 		// },
 	});
 
+	const Api = new Driver();
+
 	if (isProd) {
 		await mainWindow.loadURL("app://./home.html");
 	} else {
@@ -44,6 +46,9 @@ if (isProd) {
 	ipcMain.on("close", () => {
 		mainWindow.minimize();
 	});
+	ipcMain.on("execute", (e, script) => {
+		Api.send(Driver.Types.Execute, {script: script})
+	})
 })();
 
 app.on("window-all-closed", () => {

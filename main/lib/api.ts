@@ -1,18 +1,19 @@
 import { spawn, ChildProcessWithoutNullStreams } from "child_process";
 import { EventEmitter } from "events";
 
+
+interface Data {
+	script?: string;
+}
+
 enum Types {
 	Inject = "inject",
 	Execute = "execute",
 }
 
-interface Data {
-	ScriptPath?: string;
-}
-
 const isProd: boolean = process.env.NODE_ENV === "production";
 
-export default class Communication extends EventEmitter {
+class Communication extends EventEmitter {
 	_pipe: ChildProcessWithoutNullStreams;
 
 	constructor() {
@@ -37,3 +38,12 @@ export default class Communication extends EventEmitter {
 		process.nextTick(() => this._pipe.stdin.uncork());
 	}
 }
+
+namespace Communication {
+	export enum Types {
+		Inject = "inject",
+		Execute = "execute",
+	}
+}
+
+export default Communication
