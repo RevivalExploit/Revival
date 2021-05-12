@@ -41,7 +41,7 @@ export default function topBar() {
 		<Top theme={THEME}>
 			<a
 				onClick={() => {
-          shell.openExternal("https://revivalexploit.com");
+					shell.openExternal("https://revivalexploit.com");
 				}}
 			>
 				<h4 className="logo">Revival</h4>

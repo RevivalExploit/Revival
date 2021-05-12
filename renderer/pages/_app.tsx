@@ -9,29 +9,29 @@ import { META, THEME } from "config";
 
 // eslint-disable-next-line import/no-default-export
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  const router = useRouter();
-  useEffect(() => {
-    const handleRouteChange = (url: unknown) => {
-      pageview(url);
-    };
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-  return (
-    <>
-      <Head>
-        <title>{META.title}</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+	const router = useRouter();
+	useEffect(() => {
+		const handleRouteChange = (url: unknown) => {
+			pageview(url);
+		};
+		router.events.on("routeChangeComplete", handleRouteChange);
+		return () => {
+			router.events.off("routeChangeComplete", handleRouteChange);
+		};
+	}, [router.events]);
+	return (
+		<>
+			<Head>
+				<title>{META.title}</title>
+				<meta
+					name="viewport"
+					content="minimum-scale=1, initial-scale=1, width=device-width"
+				/>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 
-      <Header />
-      <Component {...pageProps} />
-    </>
-  );
+			<Header />
+			<Component {...pageProps} />
+		</>
+	);
 }

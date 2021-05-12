@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {THEME} from './../config'
+import { THEME } from "./../config";
 
 type CardData = {
 	name: string;

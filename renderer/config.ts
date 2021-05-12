@@ -22,5 +22,4 @@ const THEME = {
 	Keyword: "#10b1fe",
 };
 
-
 export { META, THEME };
