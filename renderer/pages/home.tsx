@@ -1,7 +1,24 @@
 import { THEME } from "config";
 import styled from "styled-components";
 import { Card } from "@styles/card.theme";
-import Editor from "@components/editor";
+
+let CodeMirror = null;
+if (typeof window !== "undefined" && typeof window.navigator !== "undefined") {
+	CodeMirror = require("react-codemirror");
+	require("codemirror/lib/codemirror.css");
+	require("codemirror/theme/nord.css");
+	require("codemirror/mode/lua/lua");
+}
+
+const EditorHolder = styled.div`
+	margin-left: 10px;
+	text-align: left;
+	.CodeMirror {
+		height: 250px;
+		width: 520px;
+		border-radius: 8px;
+	}
+`;
 
 const Scripts = styled.div`
 	height: 250px;
@@ -30,20 +47,41 @@ const Bottom = styled.div`
 `;
 
 export default function home(): JSX.Element {
+	let Editor: any;
+
+	let refCallback = (ref) => {
+		if (ref && ref.codeMirror) {
+			Editor = ref.codeMirror;
+		}
+	};
+
+	let Execute = () => {
+		alert(Editor.getValue());
+	};
+
 	return (
 		<>
 			<Mid theme={THEME}>
-				<Editor />
+				<EditorHolder>
+					{CodeMirror ? (
+						<CodeMirror
+							value="print('Hello, World!')"
+							options={{
+								mode: "lua",
+								theme: "nord",
+								lineNumbers: true,
+								lineWrapping: true,
+							}}
+							ref={refCallback}
+						/>
+					) : (
+						<></>
+					)}
+				</EditorHolder>
 				<Scripts />
 			</Mid>
 			<Bottom theme={THEME}>
-				<Card
-					onClick={() => {
-						alert("Executed Yay");
-					}}
-				>
-					Execute
-				</Card>
+				<Card onClick={Execute}>Execute</Card>
 				<Card
 					onClick={() => {
 						alert("Load Script Yay");
