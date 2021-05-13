@@ -54,7 +54,14 @@ const Settings = styled.div`
 	height: 320px;
 	width: 700px;
 `;
-const BackSettings = styled.a`
+
+const ScriptHub = styled.div`
+	display: flex;
+	height: 320px;
+	width: 700px;
+`;
+
+const Back = styled.a`
 	margin-left: 10px;
 	margin-top: 10px;
 	cursor: pointer;
@@ -85,23 +92,43 @@ export default function home(): JSX.Element {
 	};
 
 	let [SettingsOpen, setSettingsOpen] = useState(false);
+	let [ScriptHubOpen, setScriptHubOpen] = useState(false);
 
 	return (
 		<>
-			<div style={{ display: SettingsOpen ? "block" : "none" }}>
+			<div
+				style={{
+					display: SettingsOpen && !ScriptHubOpen ? "block" : "none",
+				}}
+			>
 				<Settings>
-					<BackSettings
+					<Back
 						onClick={() => {
 							setSettingsOpen(false);
 						}}
 					>
 						<AiOutlineLeft size={30} />
-					</BackSettings>
+					</Back>
 				</Settings>
 			</div>
 			<div
 				style={{
-					display: SettingsOpen ? "none" : "block",
+					display: !SettingsOpen && ScriptHubOpen ? "block" : "none",
+				}}
+			>
+				<ScriptHub>
+					<Back
+						onClick={() => {
+							setScriptHubOpen(false);
+						}}
+					>
+						<AiOutlineLeft size={30} />
+					</Back>
+				</ScriptHub>
+			</div>
+			<div
+				style={{
+					display: SettingsOpen || ScriptHubOpen ? "none" : "block",
 				}}
 			>
 				<Mid theme={THEME}>
@@ -149,7 +176,7 @@ export default function home(): JSX.Element {
 					</Card>
 					<Card
 						onClick={() => {
-							alert("Script Hub Yay");
+							setScriptHubOpen(true);
 						}}
 					>
 						Script Hub
