@@ -1,6 +1,6 @@
 import { THEME } from "config";
 import styled from "styled-components";
-import { Card } from "@styles/card.theme";
+import { Button } from "@styles/button.theme";
 import { AiOutlineLeft } from "react-icons/ai";
 import { ipcRenderer } from "electron";
 import { useState } from "react";
@@ -20,6 +20,7 @@ const EditorHolder = styled.div`
 		height: 250px;
 		width: 520px;
 		border-radius: 8px;
+
 	}
 `;
 
@@ -151,36 +152,36 @@ export default function home(): JSX.Element {
 					<Scripts />
 				</Mid>
 				<Bottom theme={THEME}>
-					<Card onClick={Execute}>Execute</Card>
-					<Card
+					<Button onClick={Execute}>Execute</Button>
+					<Button
 						onClick={() => {
 							alert("Load Script Yay");
 						}}
 					>
 						Load Script
-					</Card>
-					<Card
+					</Button>
+					<Button
 						onClick={() => {
 							alert("Save Script Yay");
 						}}
 					>
 						Save Script
-					</Card>
-					<Card onClick={Inject}>Inject</Card>
-					<Card
+					</Button>
+					<Button onClick={Inject}>Inject</Button>
+					<Button
 						onClick={() => {
 							setSettingsOpen(true);
 						}}
 					>
 						Settings
-					</Card>
-					<Card
+					</Button>
+					<Button
 						onClick={() => {
 							setScriptHubOpen(true);
 						}}
 					>
 						Script Hub
-					</Card>
+					</Button>
 				</Bottom>
 			</div>
 		</>

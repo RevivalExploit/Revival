@@ -9,13 +9,13 @@ const Top = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background: ${THEME.BackgroundOffset};
+	
 	* {
 		-webkit-app-region: no-drag;
 	}
 
 	.logo {
-		margin-left: 5px;
+		margin-left: 10px;
 		transition: color 0.1s ease;
 		&:hover {
 			cursor: pointer;
