@@ -20,7 +20,6 @@ const EditorHolder = styled.div`
 		height: 250px;
 		width: 520px;
 		border-radius: 8px;
-
 	}
 `;
 
