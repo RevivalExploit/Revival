@@ -19,7 +19,6 @@ const THEME = {
 	BackgroundOffset: "#2d374f",
 	Foreground: "#2e3440",
 	Highlight: "#10B1FE",
-	Keyword: "#10b1fe",
 };
 
 export { META, THEME };

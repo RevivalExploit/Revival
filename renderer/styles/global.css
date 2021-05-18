@@ -35,11 +35,11 @@ ol {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: #555;
+	background: #10B1FE;
 	border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-	background: #666;
+	background: #0c89c4;
 }

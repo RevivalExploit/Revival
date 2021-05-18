@@ -19,7 +19,7 @@ const Top = styled.div`
 		transition: color 0.1s ease;
 		&:hover {
 			cursor: pointer;
-			color: ${(props) => props.theme.Keyword};
+			color: ${(props) => props.theme.Highlight};
 		}
 	}
 
@@ -30,7 +30,7 @@ const Top = styled.div`
 			transition: color 0.1s ease;
 			&:hover {
 				cursor: pointer;
-				color: ${(props) => props.theme.Keyword};
+				color: ${(props) => props.theme.Highlight};
 			}
 		}
 	}
