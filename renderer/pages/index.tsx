@@ -68,7 +68,7 @@ const Back = styled.a`
 	svg {
 		transition: transform 0.2s ease;
 		&:hover {
-			transform: rotate(-180deg);
+			transform: translateX(-10px);
 		}
 	}
 `;

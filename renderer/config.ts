@@ -9,10 +9,11 @@ const META = {
 	title: "Revival Roblox Exploit | Revival",
 	lang: "en-us",
 	description:
-		"The number 1 most uptime exploit in the market. No more waiting for patched exploits to be fixed",
+		"The number 1 most updated exploit in the market. No more waiting for patched exploits to be fixed",
 	image: "/logo.png",
 	url: "https://revivalexploit.com",
 };
+
 
 const THEME = {
 	Background: "#171C28",
