@@ -68,7 +68,7 @@ const Back = styled.a`
 	svg {
 		transition: transform 0.2s ease;
 		&:hover {
-			transform: translateX(-10px);
+			transform: translateX(-7px);
 		}
 	}
 `;
@@ -90,8 +90,6 @@ export default function home(): JSX.Element {
 	let Inject = () => {
 		ipcRenderer.send("inject");
 	};
-
-
 
 	let [SettingsOpen, setSettingsOpen] = useState(false);
 	let [ScriptHubOpen, setScriptHubOpen] = useState(false);

@@ -14,7 +14,6 @@ const META = {
 	url: "https://revivalexploit.com",
 };
 
-
 const THEME = {
 	Background: "#171C28",
 	BackgroundOffset: "#2d374f",
