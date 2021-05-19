@@ -25,7 +25,7 @@ if (isProd) {
 		minHeight: 350,
 		// alwaysOnTop: true,
 		backgroundColor: THEME.Background,
-		// resizable: false,
+		resizable: false,
 		webPreferences: {
 			devTools: false,
 		},
@@ -39,7 +39,6 @@ if (isProd) {
 		const port = process.argv[2];
 		await mainWindow.loadURL(`http://localhost:${port}/`);
 	}
-
 	ipcMain.on("exit", () => {
 		app.quit();
 	});

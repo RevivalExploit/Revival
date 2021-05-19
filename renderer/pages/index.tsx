@@ -135,7 +135,7 @@ export default function home(): JSX.Element {
 					<EditorHolder>
 						{CodeMirror ? (
 							<CodeMirror
-								value="print('Hello, World!')"
+								value='print("Hello, World!")'
 								options={{
 									mode: "lua",
 									theme: "nord",
