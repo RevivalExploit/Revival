@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { THEME } from "../config";
 
 const Button = styled.button`
+	outline: inherit;
 	border: none;
 	background-color: ${THEME.Highlight};
 	border-radius: 5px;
