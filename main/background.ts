@@ -1,4 +1,4 @@
-import { app, ipcMain } from "electron";
+import { app, ipcMain, dialog } from "electron";
 import serve from "electron-serve";
 import { createWindow } from "./helpers";
 
@@ -43,14 +43,27 @@ if (isProd) {
 	ipcMain.on("close", () => {
 		mainWindow.minimize();
 	});
-
 	ipcMain.on("execute", (e, script) => {
 		Api.send(Driver.Types.Execute, { script: script });
 	});
 	ipcMain.on("inject", () => {
 		Api.send(Driver.Types.Inject);
 	});
+	ipcMain.on("load", () => {
+		dialog.showOpenDialog({
+			defaultPath: app.getPath("desktop"),
+			buttonLabel: "Load Script",
+			filters: [{ name: "*", extensions: ["lua", "txt"] }],
+		});
+	});
 
+	ipcMain.on("save", () => {
+		dialog.showSaveDialog({
+			defaultPath: app.getPath("desktop"),
+			buttonLabel: "Save Script",
+			filters: [{ name: "*", extensions: ["lua", "txt"] }],
+		});
+	});
 })();
 
 app.on("window-all-closed", () => {

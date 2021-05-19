@@ -28,6 +28,7 @@ const Button = styled.button`
 	transition: all 0.2s ease;
 	:hover {
 		box-shadow: 0px 3px 20px ${THEME.Highlight};
+		transform: scale(1.1);
 	}
 `;
 

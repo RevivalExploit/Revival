@@ -91,6 +91,8 @@ export default function home(): JSX.Element {
 		ipcRenderer.send("inject");
 	};
 
+
+
 	let [SettingsOpen, setSettingsOpen] = useState(false);
 	let [ScriptHubOpen, setScriptHubOpen] = useState(false);
 
@@ -154,14 +156,14 @@ export default function home(): JSX.Element {
 					<Button onClick={Execute}>Execute</Button>
 					<Button
 						onClick={() => {
-							alert("Load Script Yay");
+							ipcRenderer.send("load");
 						}}
 					>
 						Load Script
 					</Button>
 					<Button
 						onClick={() => {
-							alert("Save Script Yay");
+							ipcRenderer.send("save");
 						}}
 					>
 						Save Script

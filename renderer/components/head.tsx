@@ -36,6 +36,10 @@ const Top = styled.div`
 	}
 `;
 
+const Minimize = styled(AiOutlineMinus)``;
+
+const Close = styled(AiOutlineClose)``;
+
 export default function topBar() {
 	return (
 		<Top theme={THEME}>
@@ -47,7 +51,7 @@ export default function topBar() {
 				<h4 className="logo">Revival</h4>
 			</a>
 			<div className="nav-buttons">
-				<AiOutlineMinus
+				<Minimize
 					size={25}
 					onClick={() => {
 						const ipcRenderere = ipcRenderer || false;
@@ -56,7 +60,7 @@ export default function topBar() {
 						}
 					}}
 				/>
-				<AiOutlineClose
+				<Close
 					size={25}
 					onClick={() => {
 						const ipcRenderere = ipcRenderer || false;
