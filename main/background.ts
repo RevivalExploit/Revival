@@ -25,7 +25,7 @@ if (isProd) {
 		minHeight: 350,
 		// alwaysOnTop: true,
 		backgroundColor: THEME.Background,
-		resizable: false,
+		// resizable: false,
 		webPreferences: {
 			devTools: false,
 		},
