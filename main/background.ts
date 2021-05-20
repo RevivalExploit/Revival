@@ -4,7 +4,7 @@ import { createWindow } from "./helpers";
 
 import { THEME } from "../renderer/config";
 
-import Driver from "./lib/api";
+import Communication from "./lib/api";
 
 const isProd: boolean = process.env.NODE_ENV === "production";
 
@@ -29,7 +29,7 @@ if (isProd) {
 		},
 	});
 
-	const Api = new Driver();
+	const Api = new Communication();
 
 	if (isProd) {
 		await mainWindow.loadURL("app://./index.html");
@@ -44,10 +44,10 @@ if (isProd) {
 		mainWindow.minimize();
 	});
 	ipcMain.on("execute", (e, script) => {
-		Api.send(Driver.Types.Execute, { script: script });
+		Api.send(Communication.Types.Execute, { script: script });
 	});
 	ipcMain.on("inject", () => {
-		Api.send(Driver.Types.Inject);
+		Api.send(Communication.Types.Inject);
 	});
 	ipcMain.on("load", () => {
 		dialog.showOpenDialog({

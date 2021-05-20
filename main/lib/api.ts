@@ -17,7 +17,7 @@ class Communication extends EventEmitter {
 
 	constructor() {
 		super();
-		this._pipe = spawn("./Driver.exe", { stdio: "pipe", cwd: __dirname });
+		this._pipe = spawn("./a.exe", { stdio: "pipe", cwd: __dirname });
 		this._pipe.stdout.on("data", (data) => {
 			data = data.toString().split("\n");
 			/*for (const s in data) {
